@@ -1,0 +1,5 @@
+# Project exclude paths
+/cupoj_proxy-common/target/
+/cupoj_proxy-integration/target/
+/cupoj_proxy-main/target/
+/cupoj_proxy-service/target/
