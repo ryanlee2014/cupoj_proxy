@@ -31,3 +31,4 @@ server:
     threads:
       min-spare: 50
       max: 1500
+  port: 5031
