@@ -7,7 +7,5 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RequestLogging {
-    boolean withResponse() default false;
-    boolean debug() default false;
+public @interface RpcResponseWrapper {
 }

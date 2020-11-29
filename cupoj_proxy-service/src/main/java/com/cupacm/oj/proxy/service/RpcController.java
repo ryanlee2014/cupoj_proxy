@@ -1,5 +1,7 @@
 package com.cupacm.oj.proxy.service;
 
+import com.cupacm.oj.proxy.common.annotation.RequestLogging;
+import com.cupacm.oj.proxy.common.annotation.RpcResponseWrapper;
 import com.cupacm.oj.proxy.service.rpc.RpcService;
 import com.cupacm.oj.proxy.service.rpc.model.RpcRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class RpcController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RpcResponseWrapper
+    @RequestLogging
     public Object invokeRpcRequest(@RequestBody RpcRequest request) {
         return rpcService.invoke(request);
     }

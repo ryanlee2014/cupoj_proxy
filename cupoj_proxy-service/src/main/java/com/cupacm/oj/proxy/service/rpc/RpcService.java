@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Component
 @Slf4j
@@ -68,7 +69,7 @@ public class RpcService {
 
     private Object innerInvoke(Object instance, Method method, Object[] parameters) {
         try {
-            return method.invoke(instance, parameters);
+            return method.invoke(instance, parameters.length > 0 ? parameters : null);
         }
         catch (Exception e) {
             log.error("innerInvoke exception. ", e);
